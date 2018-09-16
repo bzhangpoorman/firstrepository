@@ -176,4 +176,50 @@
       update_time = now()
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <update id="updateStatusById" parameterType="map">
+  	update mmall_product set status=#{status} ,update_time = now()
+  	where id=#{id}
+  </update>
+  
+  <select id="selectAllProduct" resultMap="BaseResultMap">
+  	select <include refid="Base_Column_List"/> from mmall_product order by id asc
+  </select>
+  
+  <select id="selectProductByNameOrId" resultMap="BaseResultMap" parameterType="map">
+  	<bind name="productName" value="'%' + productName + '%'" />
+  	select <include refid="Base_Column_List"/> 
+  	from mmall_product 
+  	<where>
+  		<if test="productName != null" >
+  			<bind name="productName" value="'%' + productName + '%'" />
+  			and name like #{productName}
+      	</if>
+      	<if test="productId != null" >
+  			and id = #{productId}
+      	</if>
+  	</where>
+  	order by id asc
+  </select>
+  
+  <select id="selectProductByKeywordCategoryId" resultMap="BaseResultMap" parameterType="map">
+  	select <include refid="Base_Column_List"/> 
+  	from mmall_product 
+  	where status=1
+  	<if test="keyword != null" >
+  		<bind name="keyword" value="'%' + keyword + '%'" />
+  		and name like #{keyword}
+    </if>
+    <if test="categoryIdList != null" >
+  		and category_id in
+  		<foreach collection="categoryIdList" item="item" open="(" close=")" separator="," index="index">
+  			${item}
+  		</foreach>
+    </if>
+    order by ${orderByName} ${orderByType}
+  </select>
+  
+  <select id="selectStockById" parameterType="int" resultType="int" >
+  	select stock from mmall_product where id=#{id}
+  </select>
 </mapper>

@@ -1,5 +1,9 @@
 package com.bzhang.mmall.dao;
 
+import java.util.List;
+
+import org.apache.ibatis.annotations.Param;
+
 import com.bzhang.mmall.pojo.Category;
 
 public interface CategoryMapper {
@@ -14,4 +18,10 @@ public interface CategoryMapper {
     int updateByPrimaryKeySelective(Category record);
 
     int updateByPrimaryKey(Category record);
+    
+    int updateCategoryNameById(@Param("name")String name,@Param("id")Integer id);
+    
+    List<Category> selectChildrenParallelById(Integer id);
+    
+    
 }
