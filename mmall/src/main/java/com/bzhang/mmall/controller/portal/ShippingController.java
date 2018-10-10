@@ -1,6 +1,5 @@
 package com.bzhang.mmall.controller.portal;
 
-import java.util.List;
 
 import javax.servlet.http.HttpSession;
 

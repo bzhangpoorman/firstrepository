@@ -89,7 +89,7 @@ public class CartServiceImpl implements CartService{
 				
 				ProductDetailVo productDetailVo = productService.getProductDetail(cart.getProductId()).getData();
 				System.out.println(cart.getProductId());
-				if (productDetailVo!=null) {
+				if (productDetailVo!=null&&productDetailVo.getStatus()==Const.PRODUCT_SALE) {
 					CartProductVo cartProductVo=new CartProductVo();
 					cartProductVo.setId(cart.getId());
 					cartProductVo.setUserId(cart.getUserId());
@@ -130,6 +130,8 @@ public class CartServiceImpl implements CartService{
 					}
 					cartVo.setProductCount(cartVo.getProductCount()+cart.getQuantity());
 					cartProductVoList.add(cartProductVo);
+				}else {
+					cartMapper.deleteByPrimaryKey(cart.getId());
 				}
 				
 			}

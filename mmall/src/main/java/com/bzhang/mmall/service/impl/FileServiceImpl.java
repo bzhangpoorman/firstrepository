@@ -10,7 +10,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.bzhang.mmall.common.ServerResponse;
 import com.bzhang.mmall.service.FileService;
 import com.bzhang.mmall.util.FtpUtil;
 import com.google.common.collect.Lists;

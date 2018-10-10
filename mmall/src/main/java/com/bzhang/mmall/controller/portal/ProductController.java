@@ -1,6 +1,5 @@
 package com.bzhang.mmall.controller.portal;
 
-import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -8,10 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.bzhang.mmall.common.Const;
-import com.bzhang.mmall.common.ResponseCode;
 import com.bzhang.mmall.common.ServerResponse;
-import com.bzhang.mmall.pojo.User;
 import com.bzhang.mmall.service.ProductService;
 import com.bzhang.mmall.vo.ProductDetailVo;
 import com.github.pagehelper.PageInfo;

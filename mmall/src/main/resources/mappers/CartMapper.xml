@@ -142,4 +142,11 @@
   	and product_id=#{productId}
   	</if>
   </update>
+  
+  
+  <select id="selectByuserIdAndChecked" resultMap="BaseResultMap" parameterType="map">
+  	select 
+  	<include refid="Base_Column_List"/>
+  	from mmall_cart where user_id=#{userId} and checked=#{checked}
+  </select>
 </mapper>
