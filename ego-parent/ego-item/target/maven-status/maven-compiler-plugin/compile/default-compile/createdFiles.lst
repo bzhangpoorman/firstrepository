@@ -1,0 +1,5 @@
+com\bzhang\ego\item\service\impl\TbItemCatServiceImpl.class
+com\bzhang\ego\item\controller\TbItemCatController.class
+com\bzhang\ego\item\pojo\PortalMenuNode.class
+com\bzhang\ego\item\pojo\PortalMenu.class
+com\bzhang\ego\item\service\TbItemCatService.class
