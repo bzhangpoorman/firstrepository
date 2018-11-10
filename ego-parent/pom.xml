@@ -27,9 +27,32 @@
 		<commons-lang3-version>3.5</commons-lang3-version>
 		<guava-version>20.0</guava-version>
 		<commons-net-version>3.3</commons-net-version>
+		<solr-solrj-version>5.3.1</solr-solrj-version>
+		<httpclient-version>4.4.1</httpclient-version>
+		<ego-redis-version>0.0.1-SNAPSHOT</ego-redis-version>
 	</properties>
 	<dependencyManagement>
+		
+		
 		<dependencies>
+			<!-- 依赖ego-redis -->
+			<dependency>
+  				<groupId>com.bzhang.ego</groupId>
+    			<artifactId>ego-redis</artifactId>
+    			<version>${ego-redis-version}</version>
+  			</dependency>
+			<!-- httpclient -->
+			<dependency>
+    			<groupId>org.apache.httpcomponents</groupId>
+    			<artifactId>httpclient</artifactId>
+    			<version>${httpclient-version}</version>
+			</dependency>
+			<!-- solr -->
+			<dependency>
+   				<groupId>org.apache.solr</groupId>
+    			<artifactId>solr-solrj</artifactId>
+    			<version>${solr-solrj-version}</version>
+			</dependency>
 			<!--  -->
 			<dependency>
     			<groupId>commons-net</groupId>
@@ -200,5 +223,10 @@
 		<module>ego-manage</module>
 		<module>ego-portal</module>
 		<module>ego-item</module>
+		<module>ego-redis</module>
+		<module>ego-search</module>
+		<module>ego-passport</module>
+		<module>ego-cart</module>
+		<module>ego-order</module>
 	</modules>
 </project>

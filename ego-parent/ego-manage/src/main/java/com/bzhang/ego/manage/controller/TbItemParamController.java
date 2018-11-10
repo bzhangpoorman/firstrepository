@@ -46,18 +46,18 @@ public class TbItemParamController {
 		EgoResult egoResult=new EgoResult();
 		if (StringUtils.isBlank(ids)) {
 			egoResult.setStatus(EgoResultReason.ERROR_DELETE_PARAMS_ID_NULL.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_DELETE_PARAMS_ID_NULL.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_DELETE_PARAMS_ID_NULL.getValue());
 			return egoResult;
 		}
 		
 		int res = tbItemParamServiceImpl.deleteParams(ids);
 		if (res>=1) {
 			egoResult.setStatus(EgoResultReason.OK_DELETE_PARAMS.getCode());
-			egoResult.setReason(EgoResultReason.OK_DELETE_PARAMS.getValue());
+			egoResult.setMsg(EgoResultReason.OK_DELETE_PARAMS.getValue());
 			
 		}else {
 			egoResult.setStatus(EgoResultReason.ERROR_DELETE_PARAMS.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_DELETE_PARAMS.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_DELETE_PARAMS.getValue());
 		}
 		return egoResult;
 	}
@@ -73,20 +73,20 @@ public class TbItemParamController {
 		EgoResult egoResult=new EgoResult();
 		if (itemCatId==null||itemCatId<0) {
 			egoResult.setStatus(EgoResultReason.ERROR_CID.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_CID.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_CID.getValue());
 			return egoResult;
 		}
 		TbItemParam itemParam = tbItemParamServiceImpl.selectByItemCatId(itemCatId);
 		if (itemParam!=null) {
 			
 			egoResult.setStatus(EgoResultReason.OK_SELECT_PARAMS.getCode());
-			egoResult.setReason(EgoResultReason.OK_SELECT_PARAMS.getValue());
+			egoResult.setMsg(EgoResultReason.OK_SELECT_PARAMS.getValue());
 			egoResult.setData(itemParam);
 			
 			return egoResult;
 		}else {
 			egoResult.setStatus(EgoResultReason.ERROR_SELECT_PARAMS_NOTFOUND.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_SELECT_PARAMS_NOTFOUND.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_SELECT_PARAMS_NOTFOUND.getValue());
 			return egoResult;
 		}
 	}
@@ -103,18 +103,18 @@ public class TbItemParamController {
 		EgoResult egoResult=new EgoResult();
 		if (StringUtils.isBlank(paramData)) {
 			egoResult.setStatus(EgoResultReason.ERROR_EMPTY_PARAMDATA.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_EMPTY_PARAMDATA.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_EMPTY_PARAMDATA.getValue());
 			return egoResult;
 		}
 		int index = tbItemParamServiceImpl.insertItemParam(itemCatId, paramData);
 		if (index==1) {
 			
 			egoResult.setStatus(EgoResultReason.OK_INSERT_PARAMS.getCode());
-			egoResult.setReason(EgoResultReason.OK_INSERT_PARAMS.getValue());
+			egoResult.setMsg(EgoResultReason.OK_INSERT_PARAMS.getValue());
 			return egoResult;
 		}else {
 			egoResult.setStatus(EgoResultReason.ERROR_INSERT_PARAMS.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_INSERT_PARAMS.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_INSERT_PARAMS.getValue());
 			return egoResult;
 		}
 	}

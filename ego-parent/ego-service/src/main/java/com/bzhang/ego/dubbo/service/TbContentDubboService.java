@@ -35,4 +35,12 @@ public interface TbContentDubboService {
 	 * @return
 	 */
 	int deleteContents(List<Long> ids) throws Exception;
+	
+	/**
+	 * 查询最新的count个数据，并排序
+	 * @param count 查询个数
+	 * @param isSort 是否排序
+	 * @return
+	 */
+	List<TbContent> selectByCount(Integer count,Boolean isSort);
 }

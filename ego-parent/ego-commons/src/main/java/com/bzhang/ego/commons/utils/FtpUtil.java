@@ -135,7 +135,7 @@ public static boolean uploadFile(String host, int port, String username, String 
 		return result;
 	}
 	
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		try {  
 	        FileInputStream in=new FileInputStream(new File("E:/a.png"));  
 	        boolean flag = uploadFile("192.168.17.129", 21, "ftpuser", "ftpuser", "/home/ftpuser/","/", "abc1.png", in);  
@@ -143,5 +143,5 @@ public static boolean uploadFile(String host, int port, String username, String 
 	    } catch (FileNotFoundException e) {  
 	        e.printStackTrace();  
 	    }  
-	}
+	}*/
 }

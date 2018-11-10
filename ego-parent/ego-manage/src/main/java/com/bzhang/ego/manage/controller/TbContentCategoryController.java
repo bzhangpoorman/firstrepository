@@ -70,7 +70,7 @@ public class TbContentCategoryController {
 		int res = tbContentCategoryServiceImpl.updateContentCategory(tbContentCategory);
 		if (res==1) {
 			egoResult.setStatus(EgoResultReason.OK_UPDATE_STATUS.getCode());
-			egoResult.setReason(EgoResultReason.OK_UPDATE_STATUS.getValue());
+			egoResult.setMsg(EgoResultReason.OK_UPDATE_STATUS.getValue());
 			
 		}
 		return egoResult;
@@ -83,7 +83,7 @@ public class TbContentCategoryController {
 		int res = tbContentCategoryServiceImpl.deleteContentCategory(tbContentCategory);
 		if (res==1) {
 			egoResult.setStatus(EgoResultReason.OK_UPDATE_STATUS.getCode());
-			egoResult.setReason(EgoResultReason.OK_UPDATE_STATUS.getValue());
+			egoResult.setMsg(EgoResultReason.OK_UPDATE_STATUS.getValue());
 			
 		}
 		return egoResult;

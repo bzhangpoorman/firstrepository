@@ -5,6 +5,7 @@ D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbContentCategoryMapper.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbContentMapper.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\dubbo\service\impl\TbItemCatDubboServiceImpl.java
+D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\dubbo\service\impl\TbUserDubboServiceImpl.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbItemDescMapper.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbItemParamMapper.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbUserMapper.java
@@ -12,7 +13,9 @@ D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\dubbo\service\impl\TbContentDubboServiceImpl.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbOrderShippingMapper.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\dubbo\service\impl\TbItemParamDubboServiceImpl.java
+D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\dubbo\service\impl\TbItemParamItemDubboServiceImpl.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\dubbo\service\impl\TbContentCategoryDubboServiceImpl.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbItemMapper.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbOrderItemMapper.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\test\Test.java
+D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\dubbo\service\impl\TbOrderDubboServiceImpl.java

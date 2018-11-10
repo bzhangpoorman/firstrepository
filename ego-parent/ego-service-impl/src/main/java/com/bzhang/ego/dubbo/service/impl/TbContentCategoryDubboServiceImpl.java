@@ -54,12 +54,12 @@ public class TbContentCategoryDubboServiceImpl implements TbContentCategoryDubbo
 	}
 
 	@Override
-	public Long selectParentIdById(Long id) {
+	public TbContentCategory selectById(Long id) {
 		TbContentCategoryExample example=new TbContentCategoryExample();
 		example.createCriteria().andIdEqualTo(id).andStatusEqualTo(1);
 		List<TbContentCategory> list = tbContentCategoryMapper.selectByExample(example);
 		
-		return list.get(0).getParentId();
+		return list.get(0);
 	}
 	
 	

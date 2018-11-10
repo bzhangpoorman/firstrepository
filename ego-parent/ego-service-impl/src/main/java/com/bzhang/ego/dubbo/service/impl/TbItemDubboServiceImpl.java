@@ -4,6 +4,8 @@ import java.util.List;
 
 import javax.annotation.Resource;
 
+import org.apache.commons.collections.CollectionUtils;
+
 import com.bzhang.ego.commons.pojo.EasyUIDataGrid;
 import com.bzhang.ego.dubbo.service.TbItemDubboService;
 import com.bzhang.ego.mapper.TbItemDescMapper;
@@ -87,5 +89,29 @@ public class TbItemDubboServiceImpl implements TbItemDubboService{
 			throw new Exception("新增商品,描述及规格参数失败！");
 		}
 	}
+
+
+	@Override
+	public List<TbItem> selectAllByStatus(Byte status) {
+		TbItemExample example= new TbItemExample();
+		example.createCriteria().andStatusEqualTo(status);
+		
+		return tbItemMapper.selectByExample(example);
+	}
+
+
+	@Override
+	public TbItem selectById(Long id) {
+		TbItemExample example=new TbItemExample();
+		example.createCriteria().andIdEqualTo(id).andStatusEqualTo((byte)1);
+		List<TbItem> list = tbItemMapper.selectByExample(example);
+		if (CollectionUtils.isNotEmpty(list)) {
+			return list.get(0);
+		}
+		return null;
+	}
+
+
+	
 
 }

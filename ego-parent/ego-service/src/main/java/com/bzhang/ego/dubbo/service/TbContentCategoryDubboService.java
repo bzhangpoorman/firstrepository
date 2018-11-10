@@ -28,10 +28,10 @@ public interface TbContentCategoryDubboService {
 	int updateContentCategory(TbContentCategory tbContentCategory);
 	
 	/**
-	 * 根据id查父节点id
+	 * 根据id查对象
 	 * @param id
 	 * @return
 	 */
-	Long selectParentIdById(Long id);
+	TbContentCategory selectById(Long id);
 	
 }

@@ -57,5 +57,26 @@ public class TbContentDubboServiceImpl implements TbContentDubboService{
 			throw new Exception("删除数据失败");
 		}
 	}
+
+	@Override
+	public List<TbContent> selectByCount(Integer count, Boolean isSort) {
+		TbContentExample example =new TbContentExample();
+		if (isSort) {
+			example.setOrderByClause("updated desc");
+		}
+		
+		if (count>0) {
+			//查询最新的6个数据
+			PageHelper.startPage(1, 6);
+			List<TbContent> list = tbContentMapper.selectByExampleWithBLOBs(example);
+			PageInfo<TbContent> pageInfo=new PageInfo<>(list);
+			return pageInfo.getList();
+		}else {
+			//查询全部
+			return tbContentMapper.selectByExampleWithBLOBs(example);
+		}
+		
+		
+	}
 	
 }

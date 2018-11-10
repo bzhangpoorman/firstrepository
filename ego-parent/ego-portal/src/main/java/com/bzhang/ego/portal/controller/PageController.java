@@ -10,7 +10,8 @@ public class PageController {
 	
 	@RequestMapping("/")
 	public String welcome() {
-		return "index";
+		System.out.println("I have been used ...");
+		return "forward:/showPic";
 	}
 	
 	

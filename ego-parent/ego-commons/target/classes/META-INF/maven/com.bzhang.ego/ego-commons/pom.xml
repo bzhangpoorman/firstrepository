@@ -8,7 +8,12 @@
   <artifactId>ego-commons</artifactId>
   
   <dependencies>
-  	<!-- apache 图片上传 -->
+  			<!-- httpclient -->
+			<dependency>
+    			<groupId>org.apache.httpcomponents</groupId>
+    			<artifactId>httpclient</artifactId>
+			</dependency>
+  			<!-- apache 图片上传 -->
 			<dependency>
 				<groupId>commons-fileupload</groupId>
 				<artifactId>commons-fileupload</artifactId>
@@ -16,6 +21,21 @@
 			<dependency>
     			<groupId>commons-net</groupId>
     			<artifactId>commons-net</artifactId>
+			</dependency>
+			<dependency>
+				<groupId>com.fasterxml.jackson.core</groupId>
+				<artifactId>jackson-databind</artifactId>
+			</dependency>
+			
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>javax.servlet-api</artifactId>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>javax.servlet.jsp</groupId>
+				<artifactId>jsp-api</artifactId>
+				<scope>provided</scope>
 			</dependency>
   </dependencies>
 </project>

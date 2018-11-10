@@ -1,6 +1,5 @@
 package com.bzhang.ego.manage.controller;
 
-import java.util.Date;
 
 import javax.annotation.Resource;
 
@@ -13,11 +12,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.bzhang.ego.commons.constvalue.EgoResultConst.EgoResultReason;
 import com.bzhang.ego.commons.pojo.EasyUIDataGrid;
 import com.bzhang.ego.commons.pojo.EgoResult;
-import com.bzhang.ego.commons.utils.IDUtils;
-import com.bzhang.ego.manage.service.TbItemDescService;
 import com.bzhang.ego.manage.service.TbItemService;
 import com.bzhang.ego.pojo.TbItem;
-import com.bzhang.ego.pojo.TbItemDesc;
 
 @Controller
 public class TbItemController {
@@ -49,11 +45,11 @@ public class TbItemController {
 		int res = tbItemServiceImpl.updateItemStatus(ids, (byte) 3);
 		if (res==1) {
 			egoResult.setStatus(EgoResultReason.OK_UPDATE_STATUS.getCode());
-			egoResult.setReason(EgoResultReason.OK_UPDATE_STATUS.getValue());
+			egoResult.setMsg(EgoResultReason.OK_UPDATE_STATUS.getValue());
 			
 		}else {
 			egoResult.setStatus(EgoResultReason.ERROR_UPDATE_STATUS.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_UPDATE_STATUS.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_UPDATE_STATUS.getValue());
 		}
 		
 		return egoResult;
@@ -71,11 +67,11 @@ public class TbItemController {
 		int res = tbItemServiceImpl.updateItemStatus(ids, (byte) 1);
 		if (res==1) {
 			egoResult.setStatus(EgoResultReason.OK_UPDATE_STATUS.getCode());
-			egoResult.setReason(EgoResultReason.OK_UPDATE_STATUS.getValue());
+			egoResult.setMsg(EgoResultReason.OK_UPDATE_STATUS.getValue());
 			
 		}else {
 			egoResult.setStatus(EgoResultReason.ERROR_UPDATE_STATUS.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_UPDATE_STATUS.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_UPDATE_STATUS.getValue());
 		}
 		return egoResult;
 	}
@@ -92,11 +88,11 @@ public class TbItemController {
 		int res = tbItemServiceImpl.updateItemStatus(ids, (byte) 2);
 		if (res==1) {
 			egoResult.setStatus(EgoResultReason.OK_UPDATE_STATUS.getCode());
-			egoResult.setReason(EgoResultReason.OK_UPDATE_STATUS.getValue());
+			egoResult.setMsg(EgoResultReason.OK_UPDATE_STATUS.getValue());
 			
 		}else {
 			egoResult.setStatus(EgoResultReason.ERROR_UPDATE_STATUS.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_UPDATE_STATUS.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_UPDATE_STATUS.getValue());
 		}
 		
 		return egoResult;
@@ -109,25 +105,25 @@ public class TbItemController {
 		//库存数量必须大于0
 		if (tbItem.getCid()==null) {
 			egoResult.setStatus(EgoResultReason.ERROR_NUM.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_NUM.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_NUM.getValue());
 			return egoResult;
 		}
 		//商品类目不能为空
 		if (StringUtils.isBlank(tbItem.getTitle())) {
 			egoResult.setStatus(EgoResultReason.ERROR_CID.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_CID.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_CID.getValue());
 			return egoResult;
 		}
 		//库存数量必须大于0
 		if (tbItem.getNum()==null||tbItem.getNum()<=0) {
 			egoResult.setStatus(EgoResultReason.ERROR_NUM.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_NUM.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_NUM.getValue());
 			return egoResult;
 		}
 		//价格必须大于0
 		if (tbItem.getPrice()==null||tbItem.getPrice()<=0) {
 			egoResult.setStatus(EgoResultReason.ERROR_PRICE.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_PRICE.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_PRICE.getValue());
 			return egoResult;
 		}
 		
@@ -139,14 +135,18 @@ public class TbItemController {
 		}
 		if (index==1) {
 			egoResult.setStatus(EgoResultReason.OK_INSERT.getCode());
-			egoResult.setReason(EgoResultReason.OK_INSERT.getValue());
+			egoResult.setMsg(EgoResultReason.OK_INSERT.getValue());
 		}else {
 			egoResult.setStatus(EgoResultReason.ERROR_INSERT.getCode());
-			egoResult.setReason(EgoResultReason.ERROR_INSERT.getValue());
+			egoResult.setMsg(EgoResultReason.ERROR_INSERT.getValue());
 		}
 		
 		return egoResult;
 	}
 	
-	
+	@RequestMapping("item/save/dsd")
+	@ResponseBody
+	public EgoResult editItem() {
+		return null;
+	}
 }

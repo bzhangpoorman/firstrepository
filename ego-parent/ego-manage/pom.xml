@@ -7,8 +7,13 @@
   </parent>
   <artifactId>ego-manage</artifactId>
   <packaging>war</packaging>
-  		
 		<dependencies>
+			<!-- ego-redis -->
+			<dependency>
+				<groupId>com.bzhang.ego</groupId>
+    			<artifactId>ego-redis</artifactId>
+			</dependency>
+			
 			<dependency>
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>

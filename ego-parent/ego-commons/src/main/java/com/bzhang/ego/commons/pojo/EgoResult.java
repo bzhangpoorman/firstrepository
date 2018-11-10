@@ -3,7 +3,7 @@ package com.bzhang.ego.commons.pojo;
 public class EgoResult {
 	
 	private int status;
-	private String reason;
+	private String msg;
 	private Object data;
 
 	public Object getData() {
@@ -14,12 +14,12 @@ public class EgoResult {
 		this.data = data;
 	}
 	
-	public String getReason() {
-		return reason;
+	public String getMsg() {
+		return msg;
 	}
 
-	public void setReason(String reason) {
-		this.reason = reason;
+	public void setMsg(String reason) {
+		this.msg = reason;
 	}
 
 	public int getStatus() {

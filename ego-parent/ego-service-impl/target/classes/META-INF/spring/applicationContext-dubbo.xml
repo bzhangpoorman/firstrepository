@@ -37,6 +37,16 @@
 	<dubbo:service interface="com.bzhang.ego.dubbo.service.TbContentDubboService" ref="tbContentDubboServiceImpl"></dubbo:service>
 	<bean id="tbContentDubboServiceImpl" class="com.bzhang.ego.dubbo.service.impl.TbContentDubboServiceImpl"></bean>
 	
+	<!-- 注册规格参数详情表服务 -->
+	<dubbo:service interface="com.bzhang.ego.dubbo.service.TbItemParamItemDubboService" ref="tbItemParamItemDubboServiceImpl"></dubbo:service>
+	<bean id="tbItemParamItemDubboServiceImpl" class="com.bzhang.ego.dubbo.service.impl.TbItemParamItemDubboServiceImpl"></bean>
+	<!-- 注册用户表服务 -->
+	<dubbo:service interface="com.bzhang.ego.dubbo.service.TbUserDubboService" ref="tbUserDubboServiceImpl"></dubbo:service>
+	<bean id="tbUserDubboServiceImpl" class="com.bzhang.ego.dubbo.service.impl.TbUserDubboServiceImpl"></bean>
+	<!-- 注册订单表服务 -->
+	<dubbo:service interface="com.bzhang.ego.dubbo.service.TbOrderDubboService" ref="tbOrderDubboServiceImpl"></dubbo:service>
+	<bean id="tbOrderDubboServiceImpl" class="com.bzhang.ego.dubbo.service.impl.TbOrderDubboServiceImpl"></bean>
+	
 	<import resource="../../applicationContext.xml"/>
 </beans>
 

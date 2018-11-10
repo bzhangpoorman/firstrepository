@@ -9,6 +9,10 @@
   <packaging>war</packaging>
   
   <dependencies>
+  			<dependency>
+  				<groupId>com.bzhang.ego</groupId>
+    			<artifactId>ego-redis</artifactId>
+  			</dependency>
 			<dependency>
 				<groupId>com.google.guava</groupId>
 				<artifactId>guava</artifactId>
@@ -119,6 +123,9 @@
 					<configuration>
 						<port>8081</port>
 						<path>/</path>
+						<username>root</username>
+						<password>900808</password>
+						<url>http://192.168.232.141/manager/text</url>
 					</configuration>
 				</plugin>
 			</plugins>

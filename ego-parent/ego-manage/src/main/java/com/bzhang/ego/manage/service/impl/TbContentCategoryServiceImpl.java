@@ -45,7 +45,7 @@ public class TbContentCategoryServiceImpl implements TbContentCategoryService {
 		int res = tbContentCategoryDubboServiceImpl.insertAndUpdateContentCategory(newContentCategory);
 		if (res==1) {
 			egoResult.setStatus(EgoResultReason.OK_INSERT.getCode());
-			egoResult.setReason(EgoResultReason.OK_INSERT.getValue());
+			egoResult.setMsg(EgoResultReason.OK_INSERT.getValue());
 			Map<String, Long> map=Maps.newHashMap();
 			map.put("id", id);
 			egoResult.setData(map);
@@ -74,7 +74,7 @@ public class TbContentCategoryServiceImpl implements TbContentCategoryService {
 	
 	@Override
 	public int updateContentCategory(TbContentCategory tbContentCategory) {
-		Long pid = tbContentCategoryDubboServiceImpl.selectParentIdById(tbContentCategory.getId());
+		Long pid = tbContentCategoryDubboServiceImpl.selectById(tbContentCategory.getId()).getParentId();
 		if (checkName(pid, tbContentCategory.getName())) {
 			return 0;
 		}
@@ -86,7 +86,10 @@ public class TbContentCategoryServiceImpl implements TbContentCategoryService {
 	@Override
 	public int deleteContentCategory(TbContentCategory tbContentCategory) {
 		//Long pid = tbContentCategoryDubboServiceImpl.selectParentIdById(tbContentCategory.getId());
-		
+		Boolean isParent = tbContentCategoryDubboServiceImpl.selectById(tbContentCategory.getId()).getIsParent();
+		if (isParent==true) {
+			return 0;
+		}
 		Date updated=new Date();
 		tbContentCategory.setStatus(2);
 		tbContentCategory.setUpdated(updated);

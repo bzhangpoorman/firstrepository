@@ -26,4 +26,14 @@ public class PageController {
 	public String showPage(@PathVariable String page){
 		return page;
 	}
+	
+	/**
+	 * 根据url跳转到正确的jsp页面
+	 * @param page
+	 * @return
+	 */
+	@RequestMapping("rest/page/{page}")
+	public String showP(@PathVariable String page){
+		return page;
+	}
 }

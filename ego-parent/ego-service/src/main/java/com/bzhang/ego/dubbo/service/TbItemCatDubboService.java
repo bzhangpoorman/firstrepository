@@ -11,4 +11,11 @@ public interface TbItemCatDubboService {
 	 * @return
 	 */
 	List<TbItemCat> show(Long pid);
+	
+	/**
+	 * 根据id查询类目
+	 * @param id
+	 * @return
+	 */
+	TbItemCat selectById(Long id);
 }
