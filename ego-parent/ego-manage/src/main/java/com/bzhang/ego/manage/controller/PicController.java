@@ -12,6 +12,11 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.bzhang.ego.manage.service.PicService;
 
+/**
+ * 图片上传controller
+ * @author bzhang
+ *
+ */
 @Controller
 public class PicController {
 	

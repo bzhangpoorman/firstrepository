@@ -17,6 +17,11 @@ import com.bzhang.ego.manage.service.TbContentCategoryService;
 import com.bzhang.ego.pojo.TbContentCategory;
 import com.google.common.collect.Lists;
 
+/**
+ * 内容分类表的操作，Content_category表
+ * @author bzhang
+ *
+ */
 @Controller
 public class TbContentCategoryController {
 	@Resource
@@ -63,6 +68,11 @@ public class TbContentCategoryController {
 		return egoResult;
 	}
 	
+	/**
+	 * 修改内容分类信息
+	 * @param tbContentCategory
+	 * @return
+	 */
 	@RequestMapping("content/category/update")
 	@ResponseBody
 	public EgoResult updateCategory(TbContentCategory tbContentCategory) {
@@ -76,6 +86,11 @@ public class TbContentCategoryController {
 		return egoResult;
 	}
 	
+	/**
+	 * 删除内容分类信息
+	 * @param tbContentCategory
+	 * @return
+	 */
 	@RequestMapping("content/category/delete")
 	@ResponseBody
 	public EgoResult deleteCategory(TbContentCategory tbContentCategory) {

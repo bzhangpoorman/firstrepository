@@ -16,6 +16,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.bzhang.ego.pojo.TbItem;
 import com.bzhang.ego.search.service.TbItemService;
 
+/**
+ * solr搜索服务器管理
+ * @author bzhang
+ *
+ */
 @Controller
 public class TbItemController {
 	
@@ -43,6 +48,14 @@ public class TbItemController {
 		}
 	}
 	
+	/**
+	 * 从solr中查询数据
+	 * @param model
+	 * @param q
+	 * @param pageNum
+	 * @param pageSize
+	 * @return
+	 */
 	@RequestMapping("search.html")
 	public String search(Model model,String q,
 			@RequestParam(value="page",defaultValue="1")Integer pageNum,
@@ -64,6 +77,11 @@ public class TbItemController {
 		return "search";
 	}
 	
+	/**
+	 * 新增或修改solr商品信息
+	 * @param tbItem
+	 * @return
+	 */
 	@RequestMapping("solr/add")
 	@ResponseBody
 	public int insertOrUpdate(@RequestBody TbItem tbItem) {
@@ -75,6 +93,11 @@ public class TbItemController {
 		return 0;
 	}
 	
+	/**
+	 * 向solr中新增数据
+	 * @param ids
+	 * @return
+	 */
 	@RequestMapping("solr/addbyid")
 	@ResponseBody
 	public int insertById(String ids) {
@@ -86,6 +109,11 @@ public class TbItemController {
 		return 0;
 	}
 	
+	/**
+	 * 删除solr中数据
+	 * @param ids
+	 * @return
+	 */
 	@RequestMapping("solr/delete")
 	@ResponseBody
 	public int deleteSolrById(String ids) {

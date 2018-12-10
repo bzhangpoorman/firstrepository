@@ -8,6 +8,11 @@ import com.bzhang.ego.redis.dao.JedisDao;
 
 import redis.clients.jedis.JedisCluster;
 
+/**
+ * jedis接口实现
+ * @author bzhang
+ *
+ */
 @Repository
 public class JedisDaoImpl implements JedisDao{
 	@Resource

@@ -17,6 +17,11 @@ import com.bzhang.ego.commons.pojo.EgoResult;
 import com.bzhang.ego.manage.service.TbItemParamService;
 import com.bzhang.ego.pojo.TbItemParam;
 
+/**
+ * 商品规格参数管理
+ * @author bzhang
+ *
+ */
 @Controller
 public class TbItemParamController {
 	@Resource

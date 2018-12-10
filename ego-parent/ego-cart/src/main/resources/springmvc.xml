@@ -30,4 +30,5 @@
     	<bean class="com.bzhang.ego.cart.interceptor.LoginInterceptor"></bean>
     </mvc:interceptors>
     
+    
 </beans>

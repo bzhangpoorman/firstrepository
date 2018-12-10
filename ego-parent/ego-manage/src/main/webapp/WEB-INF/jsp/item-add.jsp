@@ -113,9 +113,9 @@
 		//$("#itemAddForm").serialize()将表单序列号为key-value形式的字符串
 		$.post("/item/save",$("#itemAddForm").serialize(), function(data){
 			if(data.status == 200){
-				$.messager.alert('提示',data.reason);
+				$.messager.alert('提示',data.msg);
 			}else {
-				$.messager.alert('提示',data.reason);
+				$.messager.alert('提示',data.msg);
 			}
 		});
 	}

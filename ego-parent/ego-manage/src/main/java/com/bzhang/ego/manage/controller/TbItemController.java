@@ -14,7 +14,14 @@ import com.bzhang.ego.commons.pojo.EasyUIDataGrid;
 import com.bzhang.ego.commons.pojo.EgoResult;
 import com.bzhang.ego.manage.service.TbItemService;
 import com.bzhang.ego.pojo.TbItem;
+import com.bzhang.ego.pojo.TbItemDesc;
+import com.bzhang.ego.pojo.TbItemParamItem;
 
+/**
+ * 商品信息管理controller
+ * @author bzhang
+ *
+ */
 @Controller
 public class TbItemController {
 	@Resource
@@ -144,9 +151,28 @@ public class TbItemController {
 		return egoResult;
 	}
 	
-	@RequestMapping("item/save/dsd")
+	/**
+	 * 商品修改
+	 * @return
+	 */
+	@RequestMapping("rest/item/update")
 	@ResponseBody
-	public EgoResult editItem() {
-		return null;
+	public EgoResult editItem(TbItem tbItem,String desc,String itemParams,Long itemParamId) {
+		EgoResult egoResult=new EgoResult();
+		int res=0;
+		try {
+			res=tbItemServiceImpl.updateItem(tbItem, desc, itemParams, itemParamId);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if (res==1) {
+			egoResult.setStatus(EgoResultReason.OK_UPDATE.getCode());
+			egoResult.setMsg(EgoResultReason.OK_UPDATE.getValue());
+		}else {
+			egoResult.setStatus(EgoResultReason.ERROR_UPDATE.getCode());
+			egoResult.setMsg(EgoResultReason.ERROR_UPDATE.getValue());
+		}
+		return egoResult;
 	}
 }

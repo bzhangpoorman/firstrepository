@@ -17,12 +17,24 @@ import com.bzhang.ego.order.pojo.OrderParams;
 import com.bzhang.ego.order.service.TbOrderService;
 import com.bzhang.ego.vo.TbItemVo;
 
+/**
+ * 订单controller
+ * @author bzhang
+ *
+ */
 @Controller
 public class TbOrderController {
 	
 	@Resource
 	private TbOrderService tbOrderServiceImpl;
 	
+	/**
+	 * 购物车中已选商品获取
+	 * @param ids
+	 * @param request
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("order/order-cart.html")
 	public String showOrder(String ids,HttpServletRequest request,Model model) {
 		String uuid = CookieUtils.getCookieValue(request, "TT_TOKEN");
@@ -32,11 +44,23 @@ public class TbOrderController {
 		return "order-cart";
 	}
 	
+	/**
+	 * 页面显示
+	 * @param path
+	 * @return
+	 */
 	@RequestMapping("show/{path}")
 	public String showJsp(@PathVariable String path) {
 		return path;
 	}
 	
+	/**
+	 * 生成订单
+	 * @param params
+	 * @param request
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("order/create.html")
 	public String createOrder(OrderParams params,HttpServletRequest request,Model model) {
 		String uuid = CookieUtils.getCookieValue(request, "TT_TOKEN");

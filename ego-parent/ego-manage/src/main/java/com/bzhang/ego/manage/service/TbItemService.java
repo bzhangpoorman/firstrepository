@@ -27,4 +27,14 @@ public interface TbItemService {
 	 */
 	int insertItem(TbItem tbItem,String desc,String itemParams)throws Exception;
 	
+	/**
+	 * 修改商品信息
+	 * @param tbItem
+	 * @param desc
+	 * @param itemParams
+	 * @return
+	 * @throws Exception
+	 */
+	int updateItem(TbItem tbItem,String desc,String itemParams,Long itemParamId)throws Exception;
+	
 }

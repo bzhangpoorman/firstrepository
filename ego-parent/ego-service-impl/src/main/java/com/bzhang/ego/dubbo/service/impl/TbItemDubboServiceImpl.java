@@ -78,7 +78,7 @@ public class TbItemDubboServiceImpl implements TbItemDubboService{
 		int res = 0;
 		try {
 			res=tbItemMapper.insertSelective(tbItem);
-			res+=tbItemDescMapper.insert(tbItemDesc);
+			res+=tbItemDescMapper.insertSelective(tbItemDesc);
 			res+=tbItemParamItemMapper.insertSelective(tbItemParamItem);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -109,6 +109,42 @@ public class TbItemDubboServiceImpl implements TbItemDubboService{
 			return list.get(0);
 		}
 		return null;
+	}
+
+
+	@Override
+	public int updateItemAndItemDesc(TbItem tbItem, TbItemDesc tbItemDesc) throws Exception {
+		int res = 0;
+		try {
+			res=tbItemMapper.updateByPrimaryKeySelective(tbItem);
+			res+=tbItemDescMapper.updateByPrimaryKeySelective(tbItemDesc);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (res==2) {
+			return 1;
+		}else {
+			throw new Exception("修改商品,描述失败！");
+		}
+	}
+
+
+	@Override
+	public int updateItemAndDescAndParamItem(TbItem tbItem, TbItemDesc tbItemDesc, TbItemParamItem tbItemParamItem)
+			throws Exception {
+		int res = 0;
+		try {
+			res=tbItemMapper.updateByPrimaryKeySelective(tbItem);
+			res+=tbItemDescMapper.updateByPrimaryKeySelective(tbItemDesc);
+			res+=tbItemParamItemMapper.updateByPrimaryKeySelective(tbItemParamItem);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		if (res==3) {
+			return 1;
+		}else {
+			throw new Exception("修改商品,描述失败！");
+		}
 	}
 
 

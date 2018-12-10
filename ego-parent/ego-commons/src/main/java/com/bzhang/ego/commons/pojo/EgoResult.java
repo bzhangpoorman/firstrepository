@@ -1,5 +1,10 @@
 package com.bzhang.ego.commons.pojo;
 
+/**
+ * 通用响应页面ajax请求
+ * @author bzhang
+ *
+ */
 public class EgoResult {
 	
 	private int status;

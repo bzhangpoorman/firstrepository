@@ -6,6 +6,11 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JavaType;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+/**
+ * json转换工具类
+ * @author bzhang
+ *
+ */
 public class JsonUtils {
 
     // 定义jackson对象

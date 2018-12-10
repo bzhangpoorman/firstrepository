@@ -125,6 +125,9 @@
 					<configuration>
 						<port>8086</port>
 						<path>/</path>
+						<username>root</username>
+						<password>900808</password>
+						<url>http://192.168.232.150/manager/text</url>
 					</configuration>
 				</plugin>
 			</plugins>

@@ -5,6 +5,11 @@ import java.util.List;
 import com.bzhang.ego.pojo.TbOrderItem;
 import com.bzhang.ego.pojo.TbOrderShipping;
 
+/**
+ * 订单页面所需数据
+ * @author bzhang
+ *
+ */
 public class OrderParams {
 
 	private String payment;

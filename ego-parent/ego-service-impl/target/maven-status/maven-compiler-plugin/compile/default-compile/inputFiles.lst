@@ -1,9 +1,11 @@
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbOrderMapper.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbItemCatMapper.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\dubbo\service\impl\TbItemDescDubboServiceImpl.java
+D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\dubbo\service\impl\TbAdminDubboServiceImpl.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\dubbo\service\impl\TbItemDubboServiceImpl.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbContentCategoryMapper.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbContentMapper.java
+D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbAdminMapper.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\dubbo\service\impl\TbItemCatDubboServiceImpl.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\dubbo\service\impl\TbUserDubboServiceImpl.java
 D:\git\repository\firstrepository\ego-parent\ego-service-impl\src\main\java\com\bzhang\ego\mapper\TbItemDescMapper.java

@@ -137,20 +137,23 @@ public class TbItemServiceImpl implements TbItemService{
 	@Override
 	public int insertOrUpdateToSolr(TbItem tbItem) throws SolrServerException, IOException {
 
-		SolrInputDocument doc=new SolrInputDocument();
-		doc.addField("id", tbItem.getId());
-		doc.addField("item_title", tbItem.getTitle());
-		doc.addField("item_sell_point", tbItem.getSellPoint());
-		doc.addField("item_price", tbItem.getPrice());
-		doc.addField("item_image", tbItem.getImage());
-		doc.addField("item_category_name", tbItemCatDubboServiceImpl.selectById(tbItem.getCid()).getName());
-		doc.addField("item_desc", tbItemDescDubboServiceImpl.selectByItemId(tbItem.getId()).getItemDesc());
-		
-		UpdateResponse response = solrClient.add(doc);
-		solrClient.commit();
-		if (response.getStatus()==0) {
-			return 1;
+		if (tbItem!=null) {
+			SolrInputDocument doc=new SolrInputDocument();
+			doc.addField("id", tbItem.getId());
+			doc.addField("item_title", tbItem.getTitle());
+			doc.addField("item_sell_point", tbItem.getSellPoint());
+			doc.addField("item_price", tbItem.getPrice());
+			doc.addField("item_image", tbItem.getImage());
+			doc.addField("item_category_name", tbItemCatDubboServiceImpl.selectById(tbItem.getCid()).getName());
+			doc.addField("item_desc", tbItemDescDubboServiceImpl.selectByItemId(tbItem.getId()).getItemDesc());
+			
+			UpdateResponse response = solrClient.add(doc);
+			solrClient.commit();
+			if (response.getStatus()==0) {
+				return 1;
+			}
 		}
+		
 		return 0;
 	}
 

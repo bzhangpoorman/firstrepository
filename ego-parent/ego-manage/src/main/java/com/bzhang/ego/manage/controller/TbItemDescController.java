@@ -1,12 +1,14 @@
 package com.bzhang.ego.manage.controller;
 
-import javax.annotation.Resource;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.bzhang.ego.manage.service.TbItemDescService;
-
+/**
+ * 商品描述管理
+ * 未使用
+ * @author bzhang
+ *
+ */
 @Controller
 public class TbItemDescController {
 	

@@ -125,7 +125,7 @@
 						<path>/</path>
 						<username>root</username>
 						<password>900808</password>
-						<url>http://192.168.232.141/manager/text</url>
+						<url>http://192.168.232.142/manager/text</url>
 					</configuration>
 				</plugin>
 			</plugins>

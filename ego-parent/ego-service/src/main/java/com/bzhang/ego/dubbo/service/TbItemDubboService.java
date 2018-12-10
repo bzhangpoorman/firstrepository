@@ -63,5 +63,24 @@ public interface TbItemDubboService {
 	 */
 	TbItem selectById(Long id);
 	
+	/**
+	 * 修改商品信息，及描述信息
+	 * @param tbItem
+	 * @param tbItemDesc
+	 * @return
+	 * @throws Exception
+	 */
+	int updateItemAndItemDesc(TbItem tbItem ,TbItemDesc tbItemDesc) throws Exception ;
+	
+	/**
+	 * 修改商品信息，商品描述及规格参数信息
+	 * @param tbItem
+	 * @param tbItemDesc
+	 * @param tbItemParamItem
+	 * @return
+	 * @throws Exception
+	 */
+	int updateItemAndDescAndParamItem(TbItem tbItem ,TbItemDesc tbItemDesc,TbItemParamItem tbItemParamItem) throws Exception ;
+	
 	
 }

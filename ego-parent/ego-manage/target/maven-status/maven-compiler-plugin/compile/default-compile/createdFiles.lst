@@ -9,6 +9,8 @@ com\bzhang\ego\manage\service\TbItemParamService.class
 com\bzhang\ego\manage\service\impl\TbItemDescServiceImpl.class
 com\bzhang\ego\manage\controller\TbItemParamController.class
 com\bzhang\ego\manage\service\impl\TbItemParamServiceImpl.class
+com\bzhang\ego\manage\controller\TbAdminController.class
+com\bzhang\ego\manage\service\impl\TbAdminServiceImpl.class
 com\bzhang\ego\manage\controller\TbItemCatController.class
 com\bzhang\ego\manage\controller\TbItemController.class
 com\bzhang\ego\manage\controller\TbContentCategoryController.class
@@ -16,10 +18,13 @@ com\bzhang\ego\manage\service\impl\TbItemServiceImpl$3.class
 com\bzhang\ego\manage\service\TbContentService.class
 com\bzhang\ego\manage\controller\TbContentController.class
 com\bzhang\ego\manage\service\impl\TbItemCatServiceImpl.class
+com\bzhang\ego\manage\interceptor\LoginInterceptor.class
 com\bzhang\ego\manage\service\impl\TbContentServiceImpl.class
+com\bzhang\ego\manage\service\TbAdminService.class
 com\bzhang\ego\manage\controller\PageController.class
 com\bzhang\ego\manage\service\TbItemDescService.class
 com\bzhang\ego\manage\service\impl\PicServiceImpl.class
 com\bzhang\ego\manage\service\TbContentCategoryService.class
 com\bzhang\ego\manage\service\PicService.class
+com\bzhang\ego\manage\service\impl\TbItemServiceImpl$4.class
 com\bzhang\ego\manage\service\impl\TbItemServiceImpl$2.class

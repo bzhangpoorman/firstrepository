@@ -4,6 +4,11 @@ import java.util.List;
 
 import com.bzhang.ego.vo.TbItemVo;
 
+/**
+ * 购物车service层接口
+ * @author bzhang
+ *
+ */
 public interface CartService {
 	/**
 	 * 将商品添加到购物车中

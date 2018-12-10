@@ -46,6 +46,9 @@
 	<!-- 注册订单表服务 -->
 	<dubbo:service interface="com.bzhang.ego.dubbo.service.TbOrderDubboService" ref="tbOrderDubboServiceImpl"></dubbo:service>
 	<bean id="tbOrderDubboServiceImpl" class="com.bzhang.ego.dubbo.service.impl.TbOrderDubboServiceImpl"></bean>
+	<!-- 注册admin表服务 -->
+	<dubbo:service interface="com.bzhang.ego.dubbo.service.TbAdminDubboService" ref="tbAdminDubboServiceImpl"></dubbo:service>
+	<bean id="tbAdminDubboServiceImpl" class="com.bzhang.ego.dubbo.service.impl.TbAdminDubboServiceImpl"></bean>
 	
 	<import resource="../../applicationContext.xml"/>
 </beans>

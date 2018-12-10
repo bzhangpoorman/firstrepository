@@ -62,12 +62,12 @@
 		            <div class="cell p-checkbox"><input data-bind="cbid:1" class="checkbox" type="checkbox" name="checkItem" checked="" value="${cart.id }"></div>
 		            <div class="cell p-goods">
 		                <div class="p-img">
-		                	<a href="http://localhost:8081/item/${cart.id }.html" target="_blank">
+		                	<a href="http://item.ego.com/item/${cart.id }.html" target="_blank">
 		                		<img clstag="clickcart|keycount|xincart|p-imglistcart" src="${cart.images[0]}" alt="${cart.title}" width="52" height="52">
 		                	</a>
 		                </div>    
 		                <div class="p-name">
-		                	<a href="http://localhost:8081/item/${cart.id }.html" clstag="clickcart|keycount|xincart|productnamelink" target="_blank">${cart.title}</a>
+		                	<a href="http://item.ego.com/item/${cart.id }.html" clstag="clickcart|keycount|xincart|productnamelink" target="_blank">${cart.title}</a>
 		                	<span class="promise411 promise411_11345721" id="promise411_11345721"></span>
 		                </div>    
 		            </div>
@@ -114,7 +114,7 @@
               <span class="shopping">
                   <b>
                   </b>
-                  <a href="http://localhost:8082/" target="_blank" clstag="clickcart|keycount|xincart|coudanlink" id="continue">继续购物</a>
+                  <a href="http://www.ego.com/" target="_blank" clstag="clickcart|keycount|xincart|coudanlink" id="continue">继续购物</a>
               </span>
           </div>
           <div class="cart-total-2014">

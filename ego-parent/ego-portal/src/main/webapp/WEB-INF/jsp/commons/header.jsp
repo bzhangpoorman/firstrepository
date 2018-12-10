@@ -14,7 +14,7 @@
 				</ul>
 				<div class="form">
 					<input type="text" class="text" accesskey="s" id="key" autocomplete="off" onkeydown="javascript:if(event.keyCode==13) search('key');">
-					<input type="button" value="搜索" class="button" onclick="javascript:window.location.href='http://localhost:8083/search.html?q=' + encodeURIComponent(document.getElementById('key').value);return false;" clstag="homepage|keycount|home2013|03a">
+					<input type="button" value="搜索" class="button" onclick="javascript:window.location.href='http://search.ego.com/search.html?q=' + encodeURIComponent(document.getElementById('key').value);return false;" clstag="homepage|keycount|home2013|03a">
 				</div>
 			</div>
 			<div id="hotwords" clstag="homepage|keycount|home2013|03b"></div>
@@ -22,7 +22,7 @@
 		<!--search end-->
 		<div id="my360buy-2013">
 			<dl>
-				<dt class="ld"><s></s><a href="http://localhost:8086/show/my-info" clstag="homepage|keycount|home2012|04a">我的易购</a><b></b></dt>
+				<dt class="ld"><s></s><a href="http://order.ego.com/show/my-info" clstag="homepage|keycount|home2012|04a">我的易购</a><b></b></dt>
 				<dd>
 					<div class="loading-style1"><b></b>加载中，请稍候...</div>
 				</dd>
@@ -31,7 +31,7 @@
 		<!--my360buy end-->
 		<div id="settleup-2013" clstag="homepage|keycount|home2013|05a">
 			<dl>
-				<dt class="ld"><s></s><span class="shopping"><span id="shopping-amount"></span></span><a href="http://localhost:8085/cart/cart.html" id="settleup-url">去购物车结算</a> <b></b> </dt>
+				<dt class="ld"><s></s><span class="shopping"><span id="shopping-amount"></span></span><a href="http://cart.ego.com/cart/cart.html" id="settleup-url">去购物车结算</a> <b></b> </dt>
 <!-- 				<dd>
 					<div class="prompt">
 						<div class="loading-style1"><b></b>加载中，请稍候...</div>

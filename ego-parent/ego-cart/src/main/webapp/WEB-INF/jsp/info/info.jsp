@@ -99,7 +99,7 @@
 </style>
 			<span class="txt">您的操作不能执行</span>
 			<ul class="m">
-				<li class="fore2">返回<a href="http://localhost:8082" target="_blank">易购首页</a></li>
+				<li class="fore2">返回<a href="http://www.ego.com" target="_blank">易购首页</a></li>
 				<li class="fore3">原因:</li>
  				<li class="fore4">${message }</li>
 			</ul>

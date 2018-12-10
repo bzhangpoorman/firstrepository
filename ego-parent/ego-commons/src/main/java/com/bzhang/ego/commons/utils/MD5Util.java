@@ -3,7 +3,11 @@ package com.bzhang.ego.commons.utils;
 
 import java.security.MessageDigest;
 
-
+/**
+ * MD5密码加密工具类
+ * @author bzhang
+ *
+ */
 public class MD5Util {
 
     private static String byteArrayToHexString(byte b[]) {

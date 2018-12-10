@@ -24,4 +24,17 @@
     </bean>
     <!-- Multipart解析器 -->
     <bean name="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
+	
+	<!-- 配置拦截器，进入后台前需要先验证是否是管理员 -->
+    <mvc:interceptors>
+    	<mvc:interceptor>
+    		<mvc:mapping path="content/*"/>
+    		<mvc:mapping path="rest/*"/>
+    		<mvc:mapping path="item/*"/>
+    		<mvc:mapping path="/"/>
+    		
+    		
+    		<bean class="com.bzhang.ego.manage.interceptor.LoginInterceptor"></bean>
+    	</mvc:interceptor>
+    </mvc:interceptors>
 </beans>

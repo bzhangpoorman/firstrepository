@@ -13,6 +13,11 @@ import com.bzhang.ego.commons.utils.CookieUtils;
 import com.bzhang.ego.commons.utils.HttpClientUtil;
 import com.bzhang.ego.commons.utils.JsonUtils;
 
+/**
+ * 用户登录验证拦截器
+ * @author bzhang
+ *
+ */
 public class LoginInterceptor implements HandlerInterceptor{
 	
 	@Override
@@ -29,12 +34,15 @@ public class LoginInterceptor implements HandlerInterceptor{
 		
 	}
 
+	/**
+	 * 进入购物车前，用户是否登录验证
+	 */
 	@Override
 	public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handle) throws Exception {
 		
 		String token = CookieUtils.getCookieValue(request, "TT_TOKEN");
 		if (StringUtils.isNotBlank(token)) {
-			String resJson = HttpClientUtil.doPost("http://localhost:8084/user/token/"+token);
+			String resJson = HttpClientUtil.doPost("http://passport.ego.com/user/token/"+token);
 			EgoResult result = JsonUtils.jsonToPojo(resJson, EgoResult.class);
 			if (result.getStatus()==200) {
 				return true;
@@ -43,7 +51,7 @@ public class LoginInterceptor implements HandlerInterceptor{
 		String referer = request.getRequestURL().toString();
 		System.out.println(referer);
 		String num = request.getParameter("num");
-		response.sendRedirect("http://localhost:8084/user/showLogin?referer="+referer+"%3Fnum="+num);
+		response.sendRedirect("http://passport.ego.com/user/showLogin?referer="+referer+"%3Fnum="+num);
 		
 		return false;
 	}

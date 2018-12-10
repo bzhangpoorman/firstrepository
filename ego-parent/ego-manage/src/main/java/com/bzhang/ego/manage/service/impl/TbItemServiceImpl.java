@@ -138,17 +138,60 @@ public class TbItemServiceImpl implements TbItemService{
 			// 新增商品及商品描述
 			index=tbItemDubboServiceImpl.insertItemAndItemDesc(tbItem, tbItemDesc);
 		}
+		if (index==1) {
+			//更新solr中数据,新开线程提升响应速度
+			new Thread(new Runnable() {
+				
+				@Override
+				public void run() {
+					HttpClientUtil.doPostJson(searchUrl, JsonUtils.objectToJson(tbItem));
+				}
+			}).start();
+		}
 		
-		//更新solr中数据,新开线程提升响应速度
-		new Thread(new Runnable() {
-			
-			@Override
-			public void run() {
-				HttpClientUtil.doPostJson(searchUrl, JsonUtils.objectToJson(tbItem));
-			}
-		}).start();
+		return index;
+	}
+
+	@Override
+	public int updateItem(TbItem tbItem,String desc,String itemParams,Long itemParamId) throws Exception {
+		// 商品更新时间
+		Date date = new Date();
+
+		tbItem.setUpdated(date);
+
+		TbItemDesc tbItemDesc = new TbItemDesc();
+		tbItemDesc.setItemId(tbItem.getId());
+		tbItemDesc.setUpdated(date);
+		if (!StringUtils.isBlank(desc)) {
+			tbItemDesc.setItemDesc(desc);
+
+		}
+
+		int index = 0;
+		if (StringUtils.isNotBlank(itemParams)&&itemParamId!=null) {
+			// 更新商品及商品描述及规格参数
+			TbItemParamItem tbItemParamItem = new TbItemParamItem();
+			tbItemParamItem.setId(itemParamId);
+			tbItemParamItem.setParamData(itemParams);
+			tbItemParamItem.setUpdated(date);
+			index = tbItemDubboServiceImpl.updateItemAndDescAndParamItem(tbItem, tbItemDesc, tbItemParamItem);
+
+		} else {
+			// 更新商品及商品描述
+			index = tbItemDubboServiceImpl.updateItemAndItemDesc(tbItem, tbItemDesc);
+		}
 		
-		
+		if (index==1) {
+			//更新solr中数据,新开线程提升响应速度
+			TbItem item = tbItemDubboServiceImpl.selectById(tbItem.getId());
+			new Thread(new Runnable() {
+				
+				@Override
+				public void run() {
+					HttpClientUtil.doPostJson(searchUrl, JsonUtils.objectToJson(item));
+				}
+			}).start();
+		}
 		return index;
 	}
 

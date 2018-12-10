@@ -2,6 +2,11 @@ package com.bzhang.ego.commons.pojo;
 
 import java.io.Serializable;
 
+/**
+ * 商品类目目录数据传递格式
+ * @author bzhang
+ *
+ */
 public class EasyUITree implements Serializable{
 	private Long id;
 	

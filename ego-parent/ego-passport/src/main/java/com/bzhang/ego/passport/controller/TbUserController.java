@@ -118,13 +118,23 @@ public class TbUserController {
 		return "register";
 	}
 	
+	/**
+	 * 检查用户名，邮箱，手机是否可用，是否已经存在
+	 * @param param
+	 * @param type
+	 * @return
+	 */
 	@RequestMapping("user/check/{param}/{type}")
 	@ResponseBody
 	public EgoResult checkParams(@PathVariable String param,@PathVariable Integer type) {
 		return tbUserServiceImpl.checkParam(param, type);
 	}
 	
-	
+	/**
+	 * 用户注册
+	 * @param user
+	 * @return
+	 */
 	@RequestMapping("user/register")
 	@ResponseBody
 	public EgoResult register(TbUser user) {

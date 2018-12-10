@@ -12,6 +12,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.bzhang.ego.commons.pojo.EasyUITree;
 import com.bzhang.ego.manage.service.TbItemCatService;
 
+/**
+ * 商品类目信息查询
+ * @author bzhang
+ *
+ */
 @Controller
 public class TbItemCatController {
 	@Resource

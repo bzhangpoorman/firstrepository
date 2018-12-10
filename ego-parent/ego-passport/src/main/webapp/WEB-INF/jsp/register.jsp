@@ -14,7 +14,7 @@
 <body>
 <div class="w" id="logo">
     <div>
-    	<a href="http://localhost:8082">
+    	<a href="http://www.ego.com">
     		<img src="/images/ego-logo.gif" alt="易购商城" width="170" height="60"/>
     	</a> <b></b>
     </div>

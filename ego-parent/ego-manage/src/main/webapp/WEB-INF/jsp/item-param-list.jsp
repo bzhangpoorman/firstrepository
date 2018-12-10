@@ -69,7 +69,7 @@
             					$("#itemParamList").datagrid("reload");
             				});
             			}else {
-            				$.messager.alert('提示',data.reason,undefined,function(){
+            				$.messager.alert('提示',data.msg,undefined,function(){
             					$("#itemParamList").datagrid("reload");
             				});
 						}

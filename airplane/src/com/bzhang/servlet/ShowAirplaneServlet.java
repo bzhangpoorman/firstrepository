@@ -5,6 +5,7 @@ import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -48,6 +49,11 @@ public class ShowAirplaneServlet extends HttpServlet {
 		System.out.println(takeid+"************"+landid);
 		List<Airplane> list=airplaneService.show(takeid, landid);
 		request.setAttribute("list", list);
+		Cookie cookie=new Cookie("1", "2");
+		cookie.setPath("");
+		cookie.setHttpOnly(true);
+		cookie.setMaxAge(3000);
+		response.addCookie(cookie);
 		request.getRequestDispatcher("show.jsp").forward(request, response);
 	}
 
@@ -57,6 +63,8 @@ public class ShowAirplaneServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+		
+		
 	}
 
 }

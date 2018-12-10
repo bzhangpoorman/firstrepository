@@ -13,6 +13,11 @@ public class TbContentController {
 	@Resource
 	private TbContentService tbContentServiceImpl;
 	
+	/**
+	 * 门户页面大广告显示
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("showPic")
 	public String showPortalPic(Model model) {
 		model.addAttribute("ad1", tbContentServiceImpl.showBigPic());

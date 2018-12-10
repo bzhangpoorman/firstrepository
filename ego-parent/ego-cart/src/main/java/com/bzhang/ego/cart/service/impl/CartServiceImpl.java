@@ -18,6 +18,11 @@ import com.bzhang.ego.redis.dao.JedisDao;
 import com.bzhang.ego.vo.TbItemVo;
 import com.google.common.collect.Lists;
 
+/**
+ * 购物车service层接口实现
+ * @author bzhang
+ *
+ */
 @Service
 public class CartServiceImpl implements CartService{
 	@Reference

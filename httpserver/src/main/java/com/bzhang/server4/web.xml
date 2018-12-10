@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web>
+	<servlet>
+		<name>login</name>
+		<servlet-name>com.bzhang.server4.LoginServlet</servlet-name>
+	</servlet>
+	<mapping>
+		<name>login</name>
+		<url-pattern>/login</url-pattern>
+	</mapping>
+	<mapping>
+		<name>login</name>
+		<url-pattern>/log111</url-pattern>
+	</mapping>
+	
+	<servlet>
+		<name>register</name>
+		<servlet-name>com.bzhang.server4.RegisterServlet</servlet-name>
+	</servlet>
+	<mapping>
+		<name>register</name>
+		<url-pattern>/reg</url-pattern>
+	</mapping>
+	
+	<servlet>
+		<name>checklogin</name>
+		<servlet-name>com.bzhang.server4.CheckLoginServlet</servlet-name>
+	</servlet>
+	<mapping>
+		<name>checklogin</name>
+		<url-pattern>/checklogin</url-pattern>
+	</mapping>
+</web>

@@ -1,5 +1,10 @@
 package com.bzhang.ego.redis.dao;
 
+/**
+ * jedis接口
+ * @author bzhang
+ *
+ */
 public interface JedisDao {
 	
 	/**

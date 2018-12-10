@@ -17,12 +17,23 @@ import com.bzhang.ego.commons.pojo.EgoResult;
 import com.bzhang.ego.commons.utils.CookieUtils;
 import com.bzhang.ego.vo.TbItemVo;
 
+/**
+ * 购物车功能controller层，包含对购物内商品的新增，数量修改，删除，以及购物车页面的跳转
+ * @author bzhang
+ *
+ */
 @Controller
 public class CartController {
 	
 	@Resource
 	private CartService cartServiceImpl;
 	
+	/**
+	 * 购物车展示
+	 * @param request
+	 * @param model
+	 * @return
+	 */
 	@RequestMapping("cart/cart.html")
 	public String showCart(HttpServletRequest request,Model model) {
 		String uuid = CookieUtils.getCookieValue(request, "TT_TOKEN");
@@ -31,6 +42,13 @@ public class CartController {
 		return "cart";
 	}
 	
+	/**
+	 * 购物车商品新增
+	 * @param id
+	 * @param num
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("cart/add/{id}.html")
 	public String addToCart(@PathVariable Long id,Integer num,HttpServletRequest request) {
 		String uuid = CookieUtils.getCookieValue(request, "TT_TOKEN");
@@ -42,6 +60,13 @@ public class CartController {
 		
 	}
 	
+	/**
+	 * 购物车中商品数量修改
+	 * @param id
+	 * @param num
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("cart/update/num/{id}/{num}.action")
 	@ResponseBody
 	public EgoResult updateCart(@PathVariable Long id,@PathVariable Integer num,HttpServletRequest request) {
@@ -58,6 +83,12 @@ public class CartController {
 		return egoResult;
 	}
 	
+	/**
+	 * 购物车中商品删除
+	 * @param id
+	 * @param request
+	 * @return
+	 */
 	@RequestMapping("cart/delete/{id}.action")
 	@ResponseBody
 	public EgoResult deleteCart(@PathVariable Long id,HttpServletRequest request) {

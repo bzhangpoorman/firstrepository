@@ -5,13 +5,13 @@ var TT = EGOU = {
 			return ;
 		}
 		$.ajax({
-			url : "http://localhost:8084/user/token/" + _ticket,
+			url : "http://passport.ego.com/user/token/" + _ticket,
 			dataType : "jsonp",
 			type : "GET",
 			success : function(data){
 				if(data.status == 200){
 					var username = data.data.username;
-					var html = username + "，欢迎来到易购！<a id='my_logout_id' href=\"http://localhost:8084/user/logout/"+_ticket+"\" class=\"link-logout\">[退出]</a>";
+					var html = username + "，欢迎来到易购！<a id='my_logout_id' href=\"http://passport.ego.com/user/logout/"+_ticket+"\" class=\"link-logout\">[退出]</a>";
 					$("#loginbar").html(html);
 				}
 			}
