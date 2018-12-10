@@ -26,6 +26,5 @@ public class EasyUIDataGrid implements Serializable{
 		this.total = total;
 	}
 	public EasyUIDataGrid() {
-		// TODO Auto-generated constructor stub
 	}
 }
